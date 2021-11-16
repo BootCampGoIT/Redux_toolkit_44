@@ -1,9 +1,14 @@
-import React from "react";
-// import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
 import { deleteTask } from "../../redux/tasks/tasksActions";
+import { deleteTaskOperation, getTasksOperation } from "../../redux/tasks/tasksOperations";
 
 const TasksList = ({ tasks, user, deleteTaskItem }) => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getTasksOperation());
+  }, [dispatch]);
   // const dispatch = useDispatch();
   // const tasks = useSelector((state) => state.tasks);
   // const user = useSelector((state) => state.user);
@@ -29,7 +34,7 @@ const TasksList = ({ tasks, user, deleteTaskItem }) => {
 // const tasks = useSelector((state) => state.tasks);
 
 const mapStateToProps = (state) => ({
-  tasks: state.tasks,
+  tasks: state.tasks.items,
   user: state.user,
 });
 
@@ -37,7 +42,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteTaskItem: (id) => dispatch(deleteTask(id)),
+    deleteTaskItem: (id) => dispatch(deleteTaskOperation(id)),
   };
 };
 

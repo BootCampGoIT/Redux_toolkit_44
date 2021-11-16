@@ -1,20 +1,23 @@
 export const ADDTASK = "-=tasks/addTask=-";
 export const DELETETASK = "-=tasks/deleteTask=-";
+export const SETLOADER = "-=tasks/setLoader=-";
+export const GETTASKS = "tasks/getTasks";
 
+export const getTasks = (tasks) => ({
+  type: GETTASKS,
+  payload: tasks,
+});
 
 export const addTask = (task) => ({
-    type: ADDTASK,
-    payload: task
-})
+  type: ADDTASK,
+  payload: task,
+});
 
 export const deleteTask = (id) => ({
-    type: DELETETASK,
-    payload: id
-})
+  type: DELETETASK,
+  payload: id,
+});
 
-// const addTasksActionCreator = (task) => {
-//     return {
-//       type: ADDTASK,
-//       payload: task,
-//     };
-//   };
+export const setLoader = () => ({
+  type: SETLOADER,
+});

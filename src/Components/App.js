@@ -8,12 +8,12 @@ import TasksList from "./tasks/TasksList";
 const App = () => {
   return (
     <>
-      {/* <TasksForm />
-      <TasksList /> */}
-      <GroupsForm />
+      <TasksForm />
+      <TasksList />
+      {/* <GroupsForm />
       <hr />
       <Filter />
-      <GroupsList />
+      <GroupsList /> */}
     </>
   );
 };

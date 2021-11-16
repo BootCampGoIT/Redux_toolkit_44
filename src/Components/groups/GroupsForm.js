@@ -10,6 +10,7 @@ const GroupsForm = ({ addNewGroup }) => {
   const onHandleSubmit = (e) => {
     e.preventDefault();
     addNewGroup(group);
+    setGroup({ name: "", count: 0 });
   };
   return (
     <form onSubmit={onHandleSubmit}>
