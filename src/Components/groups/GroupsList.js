@@ -1,14 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteGroupActionCreator } from "../../redux/groups/groupsActions";
+import { getGroups } from "../../redux/groups/groupsSelectors";
 
 const GroupsList = () => {
   const dispatch = useDispatch();
-  const groups = useSelector((state) =>
-    state.groups.items.filter((group) =>
-      group.name.toLowerCase().includes(state.groups.filter.toLowerCase())
-    )
-  );
+  const groups = useSelector(getGroups);
   return (
     <ul>
       {groups.map((group) => (

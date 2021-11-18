@@ -8,9 +8,9 @@ import TasksList from "./tasks/TasksList";
 const App = () => {
   return (
     <>
-      <TasksForm />
+      {/* <TasksForm />
       <TasksList />
-      {/* <GroupsForm />
+      <GroupsForm />
       <hr />
       <Filter />
       <GroupsList /> */}
