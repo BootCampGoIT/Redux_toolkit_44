@@ -1,4 +1,5 @@
 import React from "react";
+import AuthForm from "./auth/AuthForm";
 import Filter from "./groups/Filter";
 import GroupsForm from "./groups/GroupsForm";
 import GroupsList from "./groups/GroupsList";
@@ -8,12 +9,13 @@ import TasksList from "./tasks/TasksList";
 const App = () => {
   return (
     <>
+      {/* <AuthForm /> */}
       {/* <TasksForm />
-      <TasksList />
+      <TasksList /> */}
       <GroupsForm />
       <hr />
       <Filter />
-      <GroupsList /> */}
+      <GroupsList />
     </>
   );
 };
